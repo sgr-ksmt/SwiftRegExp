@@ -83,7 +83,7 @@ public class RegExp: NSObject {
             if let textCheckingResult = textCheckingResult {
                 for i in 0..<textCheckingResult.numberOfRanges {
 
-                    let subMatch = stringAsNS.substring(with: textCheckingResult.rangeAt(i))
+                    let subMatch = stringAsNS.substring(with: textCheckingResult.range(at: i))
                     matches.append(subMatch as String)
                 }
             }
@@ -93,7 +93,7 @@ public class RegExp: NSObject {
     }
 
     private func fullRangeForString(_ string:String) -> NSRange {
-        return NSRange(location:0, length:string.characters.count)
+        return NSRange(location: 0, length: string.count)
     }
 }
 
